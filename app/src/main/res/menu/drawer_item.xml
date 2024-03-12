@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <group android:id="@+id/group1">
+        <item
+            android:id="@+id/OYOWizardBlue"
+            android:contentDescription="Valid till 08Apr 2024"
+            android:icon="@drawable/round_person_24"
+            android:title="OYO Wizard - Blue"
+
+
+            ></item>
+        <item
+            android:id="@+id/inviteAndEarn"
+            android:icon="@drawable/round_person_24"
+
+            android:title="Invite And Earn"></item>
+        <item
+            android:id="@+id/viewWallets"
+            android:contentDescription="Valid till 08Apr 2024"
+            android:icon="@drawable/round_person_24"
+            android:title="View wallets"
+
+
+            ></item>
+
+    </group>
+    <group android:id="@+id/group2">
+        <item
+            android:id="@+id/keepGoing"
+            android:icon="@drawable/round_person_24"
+
+            android:title="Keep going"></item>
+        <item
+            android:id="@+id/viewSavedOYOs"
+            android:contentDescription="Valid till 08Apr 2024"
+            android:icon="@drawable/round_person_24"
+            android:title="View saved OYOs"
+
+
+            ></item>
+        <item
+            android:id="@+id/needHelp"
+            android:icon="@drawable/round_person_24"
+
+            android:title="Need help"></item>
+        <item
+            android:id="@+id/changeLanguage"
+            android:contentDescription="Valid till 08Apr 2024"
+            android:icon="@drawable/round_person_24"
+            android:title="Change Language"
+
+
+            ></item>
+        <item
+            android:id="@+id/viewPrivacyPolicy"
+            android:icon="@drawable/round_person_24"
+
+            android:title="View privacy policy"></item>
+
+    </group>
+    <group android:id="@+id/group3">
+        <item
+            android:id="@+id/travelAgentPartner"
+            android:contentDescription="Valid till 08Apr 2024"
+            android:icon="@drawable/round_person_24"
+            android:title="Travel agent partner"
+
+
+            ></item>
+        <item
+            android:id="@+id/OYOForBusiness"
+            android:contentDescription="Valid till 08Apr 2024"
+            android:icon="@drawable/round_person_24"
+            android:title="OYO for Business"
+
+
+            ></item>
+    </group>
+    <group android:id="@+id/group4">
+        <item
+            android:id="@+id/listYourProperties"
+            android:contentDescription="Valid till 08Apr 2024"
+            android:icon="@drawable/round_person_24"
+            android:title="List your Property"
+
+
+            ></item>
+    </group>
+
+</menu>

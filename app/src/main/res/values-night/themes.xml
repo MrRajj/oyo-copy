@@ -1,7 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.OyoCopy" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.OyoCopy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">#AE9D68</item>
+        <item name="colorPrimaryDark">#AE6897</item>
+        <item name="colorAccent">#6898AE</item>
+        <!-- Define your custom status bar color -->
+        <item name="android:statusBarColor">#FFFFFF</item>
     </style>
 </resources>
