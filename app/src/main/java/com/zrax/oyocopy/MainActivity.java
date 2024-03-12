@@ -39,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 //item.setContentDescription("this is a button");
-                if(item.getItemId()==R.id.Oyo_Wizard_Bl425ue){
+                if(item.getItemId()==R.id.OYOWizardBlue){
 
                     Toast.makeText(MainActivity.this, "Oyo_Wizard_Bl425ue", Toast.LENGTH_SHORT).show();
                 }
-                if (item.getItemId() == R.id.Oyo_Wizard_Blue345){
+                if (item.getItemId() == R.id.OYOForBusiness){
                     Toast.makeText(MainActivity.this, "Oyo_Wizard_Blue345", Toast.LENGTH_SHORT).show();
                 }
                 return false;
