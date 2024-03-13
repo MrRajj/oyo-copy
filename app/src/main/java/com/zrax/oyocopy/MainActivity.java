@@ -57,15 +57,15 @@ public class MainActivity extends AppCompatActivity {
                 handler.post(new Runnable() {
                     public void run() {
                         // Update Logo's position
-                        final ConstraintLayout.LayoutParams logoLayoutParams = (ConstraintLayout.LayoutParams) SearchBar.getLayoutParams();
-                        logoLayoutParams.setMargins(0, 0, SearchBarMargin, 0);
-                        SearchBar.setLayoutParams(logoLayoutParams);
+                        final ConstraintLayout.LayoutParams logoLayoutParams = (ConstraintLayout.LayoutParams)  Logo.getLayoutParams();
+                        logoLayoutParams.setMargins(0,LogoMargin, 0, 0);
+                         Logo.setLayoutParams(logoLayoutParams);
                         LogoMargin = LogoMargin - 5;
 
                        //  Update SearchBar's position
-//                        final ConstraintLayout.LayoutParams logoLayoutParams1 = (ConstraintLayout.LayoutParams) SearchBar.getLayoutParams();
-//                        logoLayoutParams1.setMargins(SearchBarMargin, 0, 0, 0);
-//                        SearchBar.setLayoutParams(logoLayoutParams1);
+                        final ConstraintLayout.LayoutParams logoLayoutParams1 = (ConstraintLayout.LayoutParams) SearchBar.getLayoutParams();
+                        logoLayoutParams1.setMargins(SearchBarMargin, 0, 0, 0);
+                        SearchBar.setLayoutParams(logoLayoutParams1);
 
                         SearchBarMargin = SearchBarMargin + 10;
 
