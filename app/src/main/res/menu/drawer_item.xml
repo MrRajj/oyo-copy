@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <group android:id="@+id/group1">
         <item
             android:id="@+id/OYOWizardBlue"
             android:contentDescription="Valid till 08Apr 2024"
-            android:icon="@drawable/wizard"
-            android:title="OYO Wizard - Blue"
 
+            app:actionLayout="@layout/menu_item_two_lines"
 
             ></item>
         <item

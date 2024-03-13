@@ -6,9 +6,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -58,4 +60,27 @@ public class MainActivity extends AppCompatActivity {
         });
         Toast.makeText(this, "test test .. 365365365356356365365365365365365356356365356365", Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.drawer_item, menu);
+
+        // Access the menu item
+        MenuItem menuItem = menu.findItem(R.id.OYOWizardBlue);
+
+        // Access the custom layout within the menu item
+        View actionView = menuItem.getActionView();
+        TextView titleTextView = actionView.findViewById(R.id.first_line);
+        TextView contentDescriptionTextView = actionView.findViewById(R.id.second_line);
+        ImageView imageView = findViewById(R.id.image);
+        imageView.setImageResource(R.drawable.wizard);
+
+        // Customize the TextViews as needed
+        titleTextView.setText("OYO Wizard - Blue");
+        contentDescriptionTextView.setText("Valid till 08Apr 2024");
+
+        return true;
+    }
+
+
 }
