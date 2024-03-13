@@ -1,0 +1,9 @@
+<!-- rounded_corner_black_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#FFFFFF" /> <!-- Set background color to black -->
+    <stroke
+        android:width="1dp"
+        android:color="#525252" /> <!-- Set stroke to create the black border -->
+    <corners android:radius="20dp" /> <!-- Set corner radius to 10dp -->
+</shape>

@@ -9,7 +9,7 @@
 
             app:actionLayout="@layout/menu_item_two_lines"
 
-            ></item>
+            android:title="TODO"></item>
         <item
             android:id="@+id/inviteAndEarn"
             android:icon="@drawable/invite"
