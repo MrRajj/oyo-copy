@@ -3,7 +3,9 @@ package com.zrax.oyocopy;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.motion.widget.MotionLayout;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.widget.NestedScrollView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +34,8 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
     int LogoMargin = 15;
     int SearchBarMargin = 15;
+    MotionLayout motionLayout;
+    boolean ifHidden = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
         NavigationView navigationView = findViewById(R.id.NavigationView);
         RecyclerView FDRecycle = findViewById(R.id.FDRecycle);
+        NestedScrollView rec = findViewById(R.id.rec);
+        motionLayout = findViewById(R.id.constraintLayout);
 
         ///Animation on Scroll
 
@@ -49,35 +56,28 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        final Handler handler = new Handler(); // Create a new Handler
+        rec.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                // Add your logic here to handle scroll changes
+                // For example, check if the scrollY position is at the desired position
+                Log.d("jhsadh",""+scrollY);
+                if (scrollY >= 300 && !ifHidden) {
+                    // Trigger the MotionLayout animation
+                    motionLayout.transitionToEnd();
+                    ifHidden = true;
+                }
+                if (scrollY == 0   && ifHidden) {
 
-        Timer timer2 = new Timer(); // Create a new Timer
-        TimerTask testing = new TimerTask() {
-            public void run() {
-                handler.post(new Runnable() {
-                    public void run() {
-                        // Update Logo's position
-                        final ConstraintLayout.LayoutParams logoLayoutParams = (ConstraintLayout.LayoutParams)  Logo.getLayoutParams();
-                        logoLayoutParams.setMargins(0,LogoMargin, 0, 0);
-                         Logo.setLayoutParams(logoLayoutParams);
-                        LogoMargin = LogoMargin - 5;
-
-                       //  Update SearchBar's position
-                        final ConstraintLayout.LayoutParams logoLayoutParams1 = (ConstraintLayout.LayoutParams) SearchBar.getLayoutParams();
-                        logoLayoutParams1.setMargins(SearchBarMargin, 0, 0, 0);
-                        SearchBar.setLayoutParams(logoLayoutParams1);
-
-                        SearchBarMargin = SearchBarMargin + 10;
-
-                        if (LogoMargin < -160) {
-                            timer2.cancel(); // Cancel the timer when LogoMargin is less than -160
-                        }
-                    }
-                });
+                    // Trigger the MotionLayout animation
+                    motionLayout.transitionToStart();
+                    ifHidden = false;
+                }
             }
-        };
+        });
 
-        timer2.schedule(testing, 0, 1000); // Schedule the TimerTask to run repeatedly with a fixed delay of 2000 milliseconds (2 seconds)
+
+
 
 
         // RecycleView SetUp
@@ -142,10 +142,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Access the custom layout within the menu item
         View actionView = menuItem.getActionView();
+
+        // Access the TextViews in the custom layout
         TextView titleTextView = actionView.findViewById(R.id.first_line);
         TextView contentDescriptionTextView = actionView.findViewById(R.id.second_line);
-        ImageView imageView = findViewById(R.id.image);
-        imageView.setImageResource(R.drawable.wizard);
 
         // Customize the TextViews as needed
         titleTextView.setText("OYO Wizard - Blue");

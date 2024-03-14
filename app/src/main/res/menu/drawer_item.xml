@@ -9,18 +9,18 @@
 
             app:actionLayout="@layout/menu_item_two_lines"
 
-            android:title="TODO"></item>
+           ></item>
         <item
             android:id="@+id/inviteAndEarn"
-            android:icon="@drawable/invite"
 
-            android:title="Invite And Earn"></item>
+
+            app:actionLayout="@layout/menu_item_two_lines"
+       ></item>
         <item
             android:id="@+id/viewWallets"
             android:contentDescription="Valid till 08Apr 2024"
-            android:icon="@drawable/wallet"
-            android:title="View wallets"
 
+            app:actionLayout="@layout/menu_item_two_lines"
 
             ></item>
 
@@ -71,8 +71,8 @@
         <item
             android:id="@+id/OYOForBusiness"
             android:contentDescription="Valid till 08Apr 2024"
-            android:icon="@drawable/suitcase"
-            android:title="OYO for Business"
+
+            app:actionLayout="@layout/menu_item_two_lines"
 
 
             ></item>
